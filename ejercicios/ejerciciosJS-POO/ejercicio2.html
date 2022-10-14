@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <p>Revisar resultados en la consola del navegador.</p>
+<body>
+  
+  <script>
+    let inicio = ['unacadena',3,9,1,10,500,1,10,true];
+    let arrTest1 = ["string1", "string2", 4, 1, 6, null, undefined, "1", "77", 10, 100, 2, 5, 3, "5", 7, "7", 8, 9, 10]
+    let arrTest2 = [100, -100, 0, "2", "5", "2", 50, -50]
+    let arrJustNums = [20, 15, 10, 5, 1, 0, -5, -10, -15, -20]
+    const filterNumbers = (arr) => {
+      let onlyNums = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (typeof (arr[i]) === 'number') {
+          onlyNums.push(arr[i])
+        }
+      }
+      return onlyNums
+    }
+    const ascOrder = (arr) => {
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < i; j++) {
+          if (arr[i] < arr[j]) {
+            let x = arr[i];
+            arr[i] = arr[j];
+            arr[j] = x;
+          }
+        }
+      }
+      return arr
+    }
+    console.log("Prueba 1:",ascOrder(filterNumbers(inicio)))
+    console.log("Prueba 2:",ascOrder(filterNumbers(arrTest1)))
+    console.log("Prueba 3:",ascOrder(filterNumbers(arrTest2)))
+    console.log("Prueba 4:",ascOrder(filterNumbers(arrJustNums)))
+  </script>
+</body>
+</html>
